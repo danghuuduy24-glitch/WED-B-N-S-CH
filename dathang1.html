@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đặt Hàng - Web Bán Sách</title>
+    <link rel="stylesheet" href="dathang1.css">
+</head>
+<body>
+    <header>
+        <h1>SÁCH TRỰC TUYẾN</h1>
+    </header>
+
+    <main>
+        <h2>Thông tin đặt hàng</h2>
+        <form action="xuly_dathang.html" method="get">
+            <!-- ... Các fieldset thông tin họ tên, địa chỉ giữ nguyên ... -->
+
+            <fieldset>
+                <legend>Phương thức thanh toán</legend>
+                <label>
+                    <input type="radio" name="rdThanhToan" value="COD" checked onclick="xuLyChuyenPhuongThuc(false)"> Thanh toán khi nhận hàng (COD)
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="rdThanhToan" value="ChuyenKhoan" onclick="xuLyChuyenPhuongThuc(true)"> Chuyển khoản ngân hàng
+                </label>
+
+                <div id="vungChuyenKhoan" class="ck-container" style="display: none; margin-top: 15px; padding: 15px; background: #f9f9f9; border: 1px solid #ccc;">
+                    <p>Bạn đã chọn thanh toán qua ngân hàng.</p>
+                    <button type="button" onclick="hienAnhQR()">Nhấn để lấy mã QR thanh toán</button>
+                    
+                    <div id="anhQR" style="display: none; margin-top: 15px; text-align: center;">
+                        <!-- Hiển thị số tiền động lấy từ giỏ hàng qua đây -->
+                        <p>Số tiền cần thanh toán: <strong style="color: red;"><span id="soTienThanhToan">0</span> đ</strong></p>
+                        <img src="qrcode_nganhang.png" alt="Mã QR" width="200">
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="row-submit">
+                <input type="submit" value="Xác nhận đặt đơn hàng">
+            </div>
+        </form>
+    </main>
+
+    <script>
+        window.onload = function() {
+            var sotien = localStorage.getItem("tien_phai_tra");
+            
+            if (sotien) {
+                document.getElementById("soTienThanhToan").innerText = sotien;
+            }
+        }
+        function xuLyChuyenPhuongThuc(isChuyenKhoan) {
+            var vungCK = document.getElementById("vungChuyenKhoan");
+            var anhQR = document.getElementById("anhQR");
+            if (isChuyenKhoan) {
+                vungCK.style.display = "block";
+            } else {
+                vungCK.style.display = "none";
+                anhQR.style.display = "none";
+            }
+        }
+
+        function hienAnhQR() {
+            document.getElementById("anhQR").style.display = "block";
+        }
+    </script>
+</body>
+</html>

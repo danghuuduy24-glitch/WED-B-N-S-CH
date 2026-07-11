@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+main {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+legend {
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"], input[type="tel"], textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="radio"] {
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.row-submit {
+    text-align: center;
+    margin-top: 20px;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #333;
+    color: #fff;
+}
+/* Định kiểu cho vùng chứa mã QR */
+.qr-container {
+    display: none; /* Mặc định ẩn đi khi vừa vào trang */
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px dashed #4caf50;
+    text-align: center;
+}
+
+.qr-container p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.qr-container img {
+    border: 1px solid #ccc;
+    padding: 5px;
+    background-color: #fff;
+    margin-bottom: 5px;
+}
+/* Định kiểu cho vùng chứa mã QR */
+.qr-container {
+    display: none; /* Mặc định ẩn đi khi vừa vào trang */
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px dashed #4caf50;
+    text-align: center;
+}
+
+.qr-container p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.qr-container img {
+    border: 1px solid #ccc;
+    padding: 5px;
+    background-color: #fff;
+    margin-bottom: 5px;
+}

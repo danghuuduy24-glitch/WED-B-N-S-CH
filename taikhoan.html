@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Trị Tài Khoản - Web Bán Sách</title>
+    <link rel="stylesheet" href="taikhoan.css">
+</head>
+<body>
+    <header>
+        <h1>SÁCH TRỰC TUYẾN</h1>
+        <nav>
+            <a href="trangchu.html">Trang chủ</a> | 
+            <a href="sanpham.html">Sản phẩm</a> | 
+            <a href="giohang.html">Giỏ hàng</a> | 
+            <a href="taikhoan.html">Tài khoản</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Thông tin cá nhân</h2>
+        <form action="capnhat_taikhoan.html" method="get">
+            <label for="username">Tên đăng nhập:</label>
+            <input type="text" id="username" value="sinhvien_ctu2026" readonly>
+
+            <label for="email">Địa chỉ Email:</label>
+            <input type="email" id="email" value="sv@ctu.edu.vn" required>
+
+            <label for="password">Mật khẩu mới:</label>
+            <input type="password" id="password" placeholder="Nhập mật khẩu mới nếu muốn đổi">
+
+            <label for="phone">Số điện thoại:</label>
+            <input type="text" id="phone" value="0912345678" required>
+
+            <div class="row-submit">
+                <input type="submit" value="Lưu thay đổi thông tin">
+                <button type="button" class="btn-logout">Đăng xuất</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Hàng - Web Bán Sách</title>
+    <link rel="stylesheet" href="dathang.css">
+</head>
+<body>
+    <header>
+        <h1>SÁCH TRỰC TUYẾN</h1>
+        <nav>
+            <a href="trangchu.html">Trang chủ</a> | 
+            <a href="sanpham.html">Sản phẩm</a> | 
+            <a href="giohang.html">Giỏ hàng</a> | 
+            <a href="taikhoan.html">Tài khoản</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Thông tin đặt hàng</h2>
+        <form action="xuly_dathang.html" method="get">
+            <fieldset>
+                <legend>Thông tin người nhận</legend>
+                
+                <label for="hoten">Họ và tên:</label>
+                <input type="text" id="hoten" name="txtHoTen" required>
+
+                <label for="dienthoai">Số điện thoại:</label>
+                <input type="tel" id="dienthoai" name="txtDienThoai" required>
+
+                <label for="diachi">Địa chỉ nhận hàng:</label>
+                <input type="text" id="diachi" name="txtDiaChi" required>
+
+                <label for="ghichu">Ghi chú giao hàng:</label>
+                <textarea id="ghichu" name="txtGhiChu" rows="4"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Phương thức thanh toán</legend>
+                <!-- Thêm onclick kích hoạt hàm ẩn hiện QR -->
+                <label>
+                    <input type="radio" name="rdThanhToan" value="COD" checked onclick="xuLyHienQR(false)"> Thanh toán khi nhận hàng (COD)
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="rdThanhToan" value="ChuyenKhoan" onclick="xuLyHienQR(true)"> Chuyển khoản ngân hàng
+                </label>
+                <div id="vungQR" class="qr-container">
+                    <p>Vui lòng quét mã QR dưới đây để thanh toán đơn hàng:</p>
+                    <img src="qrcode_nganhang.png" alt="Mã QR Thanh Toán" width="200">
+                    <p><strong>Nội dung CK:</strong> Nap tien [Ten_Cua_Ban]</p>
+                </div>
+            </fieldset>
+
+            <div class="row-submit">
+                <input type="submit" value="Xác nhận đặt đơn hàng">
+            </div>
+        </form>
+    </main>
+
+    <footer>
+    </footer>
+    <script>
+        function xuLyHienQR(show) {
+            var vungQR = document.getElementById("vungQR");
+            if (show) {
+                vungQR.style.display = "block"; /* Hiện vùng QR */
+            } else {
+                vungQR.style.display = "none";  /* Ẩn vùng QR */
+            }
+        }
+    </script>
+</body>
+</html>

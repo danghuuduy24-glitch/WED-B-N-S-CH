@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Giỏ Hàng - Web Bán Sách</title>
+    <link rel="stylesheet" href="giohang1.css">
+</head>
+<body>
+    <header>
+        <h1>SÁCH TRỰC TUYẾN</h1>
+    </header>
+
+    <main>
+        <h2>Giỏ hàng của bạn</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Tên sách</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                </tr>
+            </thead>
+            <tbody id="danhSachGioHang">
+            </tbody>
+        </table>
+
+        <div class="tongtien">
+            <h3>Tổng cộng: <span id="nhanTongTien">0</span> đ</h3>
+           <a href="dathang.html" class="btn-dathang" onclick="luuTruocKhiDatHang()">Đặt hàng ngay</a>
+        </div>
+    </main>
+
+    <script>
+        window.onload = function() {
+            var ten = localStorage.getItem("ten_sach_mua");
+            var gia = localStorage.getItem("gia_sach_mua");
+            if (ten && gia) {
+                var tbody = document.getElementById("danhSachGioHang");
+                var chuoiDongHTML = `
+                    <tr>
+                        <td>${ten}</td>
+                        <td>${gia} đ</td>
+                        <td>1</td>
+                        <td>${gia} đ</td>
+                    </tr>
+                `;
+                tbody.innerHTML = chuoiDongHTML;
+                document.getElementById("nhanTongTien").innerText = gia;
+            } else {
+                document.getElementById("danhSachGioHang").innerHTML = "<tr><td colspan='4'>Giỏ hàng trống</td></tr>";
+            }
+        }
+    function luuTruocKhiDatHang() {
+        var tongTien = document.getElementById("nhanTongTien").innerText;
+        localStorage.setItem("tien_phai_tra", tongTien);
+    }
+</script>
+</body>
+</html>
