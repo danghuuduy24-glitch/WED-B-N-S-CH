@@ -1,0 +1,143 @@
+/* Reset */ /*dangky.css*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:420px;
+}
+
+form{
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#333;
+}
+
+.input-box{
+    margin-bottom:18px;
+    position:relative;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+    color:#444;
+}
+
+.input-box input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+    transition:.3s;
+}
+
+.input-box input:focus{
+    border-color:#4CAF50;
+    outline:none;
+}
+
+#showPassword{
+    position:absolute;
+    right:10px;
+    top:40px;
+    border:none;
+    background:none;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.error{
+    color:red;
+    font-size:13px;
+    display:block;
+    margin-top:5px;
+}
+
+#strength{
+    margin-top:8px;
+    font-size:14px;
+    color:#666;
+}
+
+.checkbox{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:18px 0;
+}
+
+.checkbox input{
+    width:18px;
+    height:18px;
+}
+
+.btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#4CAF50;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#388E3C;
+}
+
+.login-link{
+    text-align:center;
+    margin-top:18px;
+}
+
+.login-link a{
+    color:#4CAF50;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.login-link a:hover{
+    text-decoration:underline;
+}
+
+/* Responsive */
+@media (max-width:480px){
+
+    form{
+        padding:20px;
+    }
+
+    h2{
+        font-size:24px;
+    }
+
+    .input-box input{
+        font-size:15px;
+    }
+
+}
